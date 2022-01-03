@@ -5,12 +5,15 @@ typedef long long int ll;
 
 int findMinVertex(int* weight, int* visited, int n)
 {
-	int minVertex = -1;
+	int min =INT_MAX,minVertex;
 
 	for (int i = 0; i < n; i++)
 	{
-		if (!visited[i] && (minVertex == -1 || weight[i] < weight[minVertex]))
+		if (!visited[i] && weight[i] <min){
 			minVertex = i;
+			min=weight[i];
+			
+		}
 
 	}
 	return minVertex;
